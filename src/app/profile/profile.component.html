@@ -1,0 +1,82 @@
+
+<section class="profile">
+    <div class="container">
+     <div class="row">
+         <div class="wc col text-center">
+            <img src="../assets/images/undraw_Hello_qnas.svg" class="img-fluid img-avatar rounded-pill"
+            
+            style="width:130px;"
+            >
+            <h2 >WELCOME</h2>
+         </div>
+      <form  #loginForm=ngForm class="offset-1 col-10" >
+        <table class="table ">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" (blur)="if_update()" class="form-control" name="first_name" [(ngModel)]="newForm.first_name" required ></td>
+              <td><input type="text" (blur)="if_update()" class="form-control" name="last_name" [(ngModel)]="newForm.last_name" required></td>
+            </tr>
+           
+            <tr>
+           
+          </tbody>
+          <thead class="thead-dark">
+              <tr>
+                <th scope="col"><i class="fas fa-at" ></i>Email</th>
+                <th scope="col"><i class="fas fa-mobile-alt"></i> Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" (blur)="if_update()" class="form-control"name="email" [(ngModel)]="newForm.email" required></td>
+                <td><input type="phone" ng2TelInput (hasError)="hasError($event)" (ng2TelOutput)="getNumber($event)" (intlTelInputObject)="telInputObject($event)" 
+                  (countryChange)="onCountryChange($event)" 
+                  (blur)="if_update()" class="form-control"name="phone" required
+                  />
+                  <div class="fedd invalid-feedback text-left">* Invalid phone number</div>
+                </td>
+
+              </tr>
+             
+              <tr>
+             
+            </tbody>
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col"><i class="fas fa-map-marker-alt"></i>Address</th>
+                <th scope="col"><i class="fas fa-home"></i>City</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" class="form-control" (blur)="if_update()"  name="address" [(ngModel)]="newForm.address" required></td>
+                <td><input type="text" class="form-control" (blur)="if_update()" name="city" [(ngModel)]="newForm.city" required></td>
+
+              </tr>
+             
+              <tr>
+             
+            </tbody>
+          
+        </table>
+      </form>
+          <div class="col-8 offset-2 hvr-float-shadow">
+<button class="btn btn-block "
+style="background-color: #723dbe;color:#fff;
+letter-spacing: 1px;
+font-size: 18px;
+"
+(click)="onSubmit()"
+[disabled]="loginForm.invalid || no_update"
+>Update</button>
+          </div>
+     </div>
+  
+    </div>
+</section>

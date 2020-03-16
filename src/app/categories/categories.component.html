@@ -1,0 +1,21 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Categorie</th>
+        <th scope="col">Description</th>
+        <th scope="col">Modification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let c of categories'>
+        <th scope="row">{{c.id}}</th>
+        <td><input type="text" [attr.data-val]='c.id' name='name' class="form-control" [value]='c.name' (blur)='onBlur($event)'>
+          <div class="invalid-feedback">Name has already been taken</div>
+        </td>
+        <td><input type="text" [attr.data-val]='c.id' name='description' class="form-control" [value]='c.description'></td>
+        <td ><button class="btn btn-primary" [attr.data-id]='c.id' (click)='onBlur_update($event)'>Update</button><button class="btn btn-danger" [attr.data-id]='c.id' (click)='onBlur_delete($event)'>Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

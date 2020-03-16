@@ -1,0 +1,131 @@
+<!---             Features                -->
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<section class="features">
+    <div class="container text-center">
+     <div class="row text-center">
+       <div class="container">
+        <h1>Our Features</h1>
+       </div>
+       <br>
+       <div class="col-12 col-md-6 col-lg-4 cl">
+         <i class="fas fa-archway"></i> <br>
+         <p>         
+    Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard       
+         </p>      
+       </div>
+         <div class="col-12 col-md-6 col-lg-4 cl">
+        <i class="fab fa-battle-net"></i><br>
+        <p>         
+            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard       
+                 </p>  
+         </div>
+             <div class="col-12 col-md-6 col-lg-4 cl">
+         <i class="fas fa-calendar-check"></i><br>
+         <p>         
+            Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard       
+                 </p>  
+         </div>
+    </div>
+    
+    </div>
+   </section>
+   <section id="choose-us">
+       <div class="container">
+           <div class="row text-center">
+               <div class="container">
+                
+               </div>
+               <div class="col-12 col-md-6 df text-md-left data text-center">
+                   <p class="text-center text-md-left">Why we'are diffrent</p>
+                   <ul class="text-center text-md-left list-unstyled">
+                       <li>Understand our clinet's business goal first</li>
+                       <li>Believe in doing business with honesety</li>
+                       <li>We deliver on time</li>
+                       <li>We cereate a winnning content strategy</li>
+                       <li> we protect ypur online reputation</li>
+                       
+
+                   </ul>
+               </div>
+               <div class="col-12 col-md-6 contains-img">
+                   <img src="../assets/images/undraw_feeling_proud_qne1.svg" alt="" class="img-fluid">
+               </div>
+            
+           </div>
+       </div>
+   </section>
+   <section id="about-us">
+<div class="continer">
+    <div class="row">
+        <div class="col-12 col-md-6 text-center data">
+            <div class="contains-i text-center"><i class="fas fa-handshake"></i></div>
+            <p class="title text-center">Qualité et Prix</p>
+            Nous offrons des prix compétitifs sur notre large gamme de produits, plus de 100 millions de produits disponibles.
+        </div>
+        <div class="col-12 col-md-6 text-center  data">
+           <div class="contains-i text-center"> <i class="fas fa-truck"></i></div>
+            <p class="title text-center">Livraison dans le monde entier</p>
+            Notre site est disponible en 5 langues, et nous livrons dans plus de 200 pays et régions.
+         
+        </div>
+        <div class="col-12 col-md-6 text-center  data">
+            <div class="contains-i text-center"> <i class="fab fa-cc-paypal"></i></div>
+           
+          <p class="title text-center">  Paiement sécurisé</p>
+        Payez avec les méthodes de paiement les plus populaires et les plus s?res au monde.
+        </div>
+        <div class="col-12 col-md-6 text-center  data">
+           <div class="contains-i text-center">
+            <i class="fas fa-shield-alt"></i>
+           </div>
+          <p class="title text-center">  Achetez en toute confiance</p>
+        Notre Protection de l'acheteur vous protège du premier clic à la livraison.
+        </div>
+    </div>
+</div>
+   </section>
+   <section id="join-us">
+       <div class="container">
+           <div class="row">
+               <div class=" col col-md-7 text-center">
+                <h1 class="title text-center">Like & share your Love</h1>
+                <p class=" text-center text-md-left">
+                 On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte
+             </p>
+                <button class="btn btn-danger text-center">Join Us</button>
+               </div>
+           </div>
+       </div>
+   </section>
+   <Section class="random-product">
+       <div class="container text-center">
+           <div class="row">
+            
+          <div *ngFor="let c of products" class="col-12 col-md-6 col-lg-4 ">
+            <div class="card text-center shadow">
+               <div class="inner" style="position: relative;">
+                <span class="promo" *ngIf="c.promotion">-{{c.promotion}}%</span>
+                <img  [src]="split_images(c.images)" class="card-img-top" alt="Card image top">
+               </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+     {{c.name}}
+                    </h5>
+                    <p class="card-text">{{c.description}}</p>
+                    <p class="card-text">Marque : <span>{{c.marque}}</span></p>
+                    <p class="card-text">Price  : <span>{{c.new_price}} DH</span>
+                    </p>
+                    
+                    
+                    <a routerLink="/product/{{c.id}}" class="btn btn-primary hvr-buzz-out">Visiter</a>
+                </div>
+               </div>
+          </div>
+          
+           </div>
+       </div>
+   </Section>
+   <app-footer></app-footer>

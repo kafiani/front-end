@@ -1,0 +1,33 @@
+<Section class="random-product">
+    <div class="container first">
+        <div class="row">
+            <div class="form-group col-8 offset-2" style="position: relative;">
+                <input type="text" (keyup)="onKeyup()"  class="form-control" placeholder="Search For ..."  [(ngModel)]="search" name="serach"> <i class="fas fa-search" style="color:#be2edd"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="row">
+         
+       <div *ngFor="let c of products" class="col-10 offset-1 offset-md-0 col-md-6 col-lg-4 ">
+         <div class="card text-center shadow">
+            <div class="inner" style="position: relative;">
+                <span class="promo" *ngIf="c.promotion">-{{c.promotion}}%</span>
+             <img  [src]="split_images(c.images)" class="card-img-top" alt="Card image top">
+            </div>
+             <div class="card-body">
+                 <h5 class="card-title">
+  {{c.name}}
+                 </h5>
+                 <p class="card-text">{{c.description}}</p>
+                 <p class="card-text">Marque : <span>{{c.marque}}</span></p>
+                 <p class="card-text">Price  : <span>{{c.new_price}}</span></p>
+                 
+                 <a routerLink="/product/{{c.id}}" class="btn btn-primary hvr-buzz-out">Visiter</a>
+             </div>
+            </div>
+       </div>
+       
+        </div>
+    </div>
+</Section>

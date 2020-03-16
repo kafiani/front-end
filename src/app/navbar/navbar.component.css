@@ -1,0 +1,44 @@
+.btn-mat {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative; }
+ .btn-mat {
+    background: transparent;
+    border-color: transparent; }
+  .btn-mat:after {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      background: #a517ba;
+      border-radius: 10px; }
+      .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+      .inputfile + label {
+        font-size: 1.25em;
+        font-weight: 700;
+        color: white;
+        background-color: black;
+        display: inline-block;
+    }
+    
+    .inputfile:focus + label,
+    .inputfile + label:hover {
+        background-color: red;
+    }
+    .inputfile + label {
+      cursor: pointer; /* "hand" cursor */
+    }

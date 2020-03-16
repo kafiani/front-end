@@ -1,0 +1,37 @@
+section {
+    background-color: #f5f5f5;
+    padding:10px;
+    padding-top:40px;
+    padding-bottom:60px;
+}
+section .notify{
+  
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #fff;
+    margin-bottom: 20px;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border-radius: 5px;;
+}
+section .notify:nth-child(1){
+    margin-top:30px;
+}
+section .notify .data span{
+    color:darkorchid;
+}
+section .no_notify{
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+section .container .row .notify:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+  section .container .row .notify .alert_notify{
+color:red !important;
+position: absolute;
+right:0;
+top:50%;
+transform:translateY(-50%);
+
+  }

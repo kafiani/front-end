@@ -1,0 +1,143 @@
+#carouselExampleControls{
+    margin-top:30px;
+    
+}
+#carouselExampleControls .carousel-item img{
+    height:350px;
+}
+ .les_infos{
+margin-top:20px;
+}
+ .les_infos .info{
+     padding-top:10px;
+     padding-bottom:10px;
+    margin-bottom:5px;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+.les_infos .info span{
+    color:#000;
+}
+.les_infos .promotion .promo{
+    background-color: #8c7ae6;
+    color:#fff !important;
+    margin-left:10px;
+    border-radius: 3px;;
+}
+.les_infos .promotion s{
+    color: #75757a;
+}
+.les_infos .btn {
+padding-top:10px;
+padding-bottom:10px;
+position :relative;
+background-color: #723dbe;
+color:#fff;
+margin-top: 65px;
+margin-bottom:25px;
+}
+.les_infos .btn:focus,.les_infos .btn:hover {
+    box-shadow:0 0 0 0;
+    transition: all .5s ease;
+    background-color: #8e44ad;
+    }
+.les_infos .btn i{
+    position: absolute;
+    top:50%;
+    left: 18px;
+    font-size: 20px;
+    transform:translateY(-50%);
+}
+.cr i {
+    font-size: 37px;
+    color: #8e44ad;
+}
+.smilaire_product div img{
+    height:250px !important;
+}
+section.random-product .container .row{
+    margin-left:0px;
+    margin-right:0px;
+    }
+    section .container .row .card .btn{
+        width: 128px;
+        font-size: 17px;
+        background-color: #a517ba;
+        outline:0;
+        border:0;
+     
+    }
+    section.random-product .container .row .card .btn:focus, section .container .row .card .btn:hover{
+        box-shadow:0px 0px 0px 0px;
+    }
+    section.random-product{
+        margin-top:51px;
+
+        padding-top:50px;
+        padding-bottom:50px;
+    }
+    section.random-product .card p{
+        font-weight: 500;
+    }
+    section.random-product .card span{
+        font-weight: 400;
+           }
+           section.random-product .text-center{
+           margin-bottom:90px;
+               }
+
+
+section.random-product h2.title{
+ margin-bottom:25px;
+ font-weight: initial;
+font-family: 'Raleway' ;
+letter-spacing: 2px;
+               }
+ section.random-product .card .inner{
+overflow:hidden
+               }
+               section.random-product .card .inner img{
+                transition:all  1s ease; 
+                               }
+ section.random-product .card .inner:hover img{
+     transform:scale(1.2);
+ }
+ .carousel-item{
+     padding-bottom: 25px;
+ }
+ .container .promo{
+    background-color: #d63031;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color:#fff;
+}
+input.form-control{
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    section{
+        margin-top:100px!important;
+    }
+

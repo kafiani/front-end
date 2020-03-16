@@ -1,0 +1,80 @@
+<!--<mat-card>
+    <h1 class="ml-2">All Commands</h1>
+<table id="cart" class="table table-hover table-condensed">
+    <thead>
+        <tr>
+            <th style="width:20%">Fullname</th>
+            <th style="width:10%">Phone</th>
+            <th style="width:18%">Address</th>
+            <th style="width:8%">City</th>
+            <th style="width:8%">Country</th>
+            <th style="width:15%">Total</th>
+            <th style="width:20%">At</th>
+            <th style="width:9%">Status</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let com of allCommands; let i = index">
+            <tr (click)="visibility(i)" >
+                <td data-th="Fullname">{{com.fullname}}</td>
+                <td data-th="Phone">{{com.numero}}</td>
+                <td data-th="Address">{{com.address}}</td>
+                <td data-th="City">{{com.city}}</td>
+                <td data-th="Country">{{com.country}}</td>
+                <td data-th="Total">{{com.total}}$</td>
+                <td data-th="At">{{com.created_at | date}}</td>
+                <td data-th="Status">
+                    <span class="badge badge-success" *ngIf="com.status" >Success</span>
+                    <span class="badge badge-dark" *ngIf="!com.status" style="cursor: pointer;" (click)="changeStatus(com.id,i)">Not yet</span>
+                </td>
+
+            </tr>
+            <tr [class.d-none]="!visible[i]"  *ngFor="let line of allCommandLines[i]">
+                <td><small>Id is: {{line.idProduct}}</small></td>
+                <td><small>Quantity of: {{line.quantity}}</small></td>
+            </tr>
+        <tr *ngIf="allCommands.length == 0">
+            <td><h4>Nothing</h4></td>
+        </tr>
+    </tbody>
+    <tfoot>
+       
+    </tfoot>
+</table>
+</mat-card>
+-->
+<table class="table table-striped" style="padding-top:200px;">
+    <thead>
+      <tr>
+        <th >Fullname</th>
+        <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">City</th>
+            <th scope="col">Total</th>
+            <th scope="col">At</th>
+            <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody >
+        <tr (click)="visibility(i)" *ngFor="let com of allCommands; let i = index">
+            <td data-th="Fullname">{{com.fullname}}</td>
+            <td data-th="Phone">{{com.numero}}</td>
+            <td data-th="Address">{{com.address}}</td>
+            <td data-th="City">{{com.city}}</td>
+            <td data-th="Total">{{com.total}}$</td>
+            <td data-th="At">{{com.created_at | date}}</td>
+            <td data-th="Status">
+                <span class="badge badge-success" *ngIf="com.status" >Success</span>
+                <span class="badge badge-dark" *ngIf="!com.status" style="cursor: pointer;" (click)="changeStatus(com.id,i)">Not yet</span>
+            </td>
+
+        </tr>
+        <tr [class.d-none]="!visible[i]"  *ngFor="let line of allCommandLines[i]">
+            <td><small>Id is: {{line.idProduct}}</small></td>
+            <td><small>Quantity of: {{line.quantity}}</small></td>
+        </tr>
+    <tr *ngIf="allCommands.length == 0">
+        <td><h4>Nothing</h4></td>
+    </tr>
+</tbody>
+  </table>

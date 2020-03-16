@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  </head>
+<body>
+<section class="login">
+<div class="">
+  <div class="row">
+    <div class="col-4 d-none d-xl-block div-img">
+      <img src="../assets/images/undraw_social_thinking_7ule.svg" alt="" class="img-fluid img-phone">
+    </div> 
+   
+    <div class=" login-container col-12 col-xl-8">
+  
+          <div class="container d-flex justify-content-center">
+            <form class="text-center col-lg-10"  #loginForm=ngForm  (ngSubmit)="onSubmit()" >
+              <img src="../assets/images/undraw_Hello_qnas.svg" class="img-fluid img-avatar rounded-pill">
+              <h2 >WELCOME</h2>
+             
+             
+                <div class="row">
+                    <div class="form-group hasFonts special text-left col-6">
+                 
+                        <div class="to-i ">
+                            <i class="fab fa-product-hunt"></i><input type="text" (blur)='onBlur()' class="form-control  form-control-lg" [(ngModel)]="form.name" name="name"  placeholder="Le Nom"  required  id="name">
+                        </div>
+                        <div class="invalid-feedback">Name has already been taken</div>
+                      </div>
+                      <div class="form-group hasFonts special text-left col-6">
+                        
+                        <div class="to-i sct">
+                          
+                         <select name="category" (change)='onChange($event)'  id="category" class="form-control" >
+                          <option disabled>Category</option>
+                           <option *ngFor='let c of all_ctegories' [value]="c.name">{{c.name}}</option>
+                         
+
+                         </select>
+                        </div>
+                      </div>
+                      <div class="form-group hasFonts special text-left col-6">
+                        
+                        <div class="to-i ">
+                            <i class="fas fa-battery-full "></i><input type="number" min="1"  class="form-control mg form-control-lg" [(ngModel)]="form.quantity" name="quantity"  placeholder="La quantite"  required  id="quantity">
+                        </div>
+                      </div>
+                      <div class="form-group hasFonts special text-left col-6">
+                          
+                        <div class="to-i ">
+                            <i class="fas fa-ring"></i><input type="text" placeholder="La Marque"  class="form-control  form-control-lg" [(ngModel)]="form.marque" name="marque"    required  id="marque">
+                        </div>
+                      </div>
+                      <div class="form-group hasFonts special text-left col-6">
+                         
+                        <div class="to-i ">
+                            <i class="fas fa-dollar-sign"></i><input type="text"  class="form-control  form-control-lg" [(ngModel)]="form.new_price" name="new_price"  placeholder="Le Prix"  required  id="new_price">
+                        </div>
+                      </div>
+                      <div class="form-group hasFonts special text-left col-6">
+                        <div class="to-i ">
+                            <i class="fas fa-balance-scale "></i><input type="text"  class="form-control mg  form-control-lg" [(ngModel)]="form.Poids" name="Poids"   placeholder="Le Poid"  id="Poids">
+                        </div>
+                      </div>
+                      <div class="form-group hasFonts special text-left col-6">
+                        <div class="to-i ">
+                            <i class="fas fa-spinner"></i><input type="text"  class="form-control  form-control-lg" [(ngModel)]="form.promotion" name="promotion"   placeholder="y'a t-il une promotion"  id="promotion">
+                        </div>
+                      </div>
+                      <div class="form-group hasFonts special text-left col-6">
+                        <div class="to-i ">
+                            <i class="fas fa-spinner"></i><input type="text"  class="form-control  form-control-lg" [(ngModel)]="form.color" name="color"   placeholder="La Couleur"  id="color">
+                        </div>
+                      </div>
+                     
+                     
+                      <div class="form-group text-left col-6">
+                        <textarea class="form-control" placeholder="La Description" (blur)='onBlur()'  name="descreption" [(ngModel)]="form.description"   minlength="3" required></textarea>
+                        <div class="invalid-feedback">Description has already been taken</div>
+                      </div>
+                      <div class="gp col-6">
+                        <label for="file" class="hvr-icon-bob"><i class="fas fa-upload hvr-icon"></i> Upload images</label>
+                        <input type="file"  name="file" id="file" class="inputfile "  (change)="fileEvent($event)" multiple accept="image/*"/>
+    
+                      </div>
+                      
+                </div>
+             
+             
+
+
+             
+           
+              <button class=" mt-4 btn btn-primary btn-block" [disabled]="loginForm.invalid || !form.category || !input_file_is_valid">Add Product</button>
+              
+            </form>
+          </div>
+       
+    </div> 
+   
+  </div>
+</div>
+</section>
+</body>
+
+</html>
+

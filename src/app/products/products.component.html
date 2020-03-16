@@ -1,0 +1,47 @@
+
+<div class="container">
+  <div class="row">
+    <div class="form-group col-4 text-center offset-4">
+      <select (change)="onChange($event)">
+        <option value="All">All Categories</option>
+        <option  *ngFor="let c of all_ctegories" [value]="c.name">{{c.name}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+<table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Category</th>
+        <th scope="col">Color</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Marque</th>
+        <th scope="col">Poids</th>
+        <th scope="col">Price</th>
+        <th scope="col">Promotion</th>
+        <th scope="col">Modification</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let c of products;index as i'>
+        <th scope="row">{{i+1}}</th>   
+        <td><input type="text"  (blur)='onBlur($event)' class="form-control" [value]='c.name' [attr.data-val]='c.id' name='name'>
+          <div class="invalid-feedback">Name has already been taken</div>
+        </td>
+        <td><input type="text" class="form-control" [value]='c.description' [attr.data-val]='c.id' name='description'></td>
+        <td><input type="text" class="form-control" [value]='c.category' [attr.data-val]='c.id' name='category'></td>
+        <td><input type="text" class="form-control" [value]='c.color' [attr.data-val]='c.id' name='color'></td>
+        <td><input type="number" min="0" class="form-control" [value]='c.quantity' [attr.data-val]='c.id'  name='quantity'></td>
+        <td><input type="text" class="form-control" [value]='c.marque' [attr.data-val]='c.id' name='marque'></td>
+        <td><input type="text" class="form-control" [value]='c.Poids' [attr.data-val]='c.id' name='Poids'></td>
+        <td><input type="text" class="form-control" [value]='c.new_price' [attr.data-val]='c.id' name='new_price'></td>
+        <td><input type="text" class="form-control" [value]='c.promotion' [attr.data-val]='c.id' name='promotion'></td>
+        <td ><button class="btn btn-primary" [attr.data-id]='c.id' (click)='onBlur_update($event)'>Update</button><button class="btn btn-danger" [attr.data-id]='c.id' (click)='onBlur_delete($event)'>Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

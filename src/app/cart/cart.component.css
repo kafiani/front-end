@@ -1,0 +1,82 @@
+section.panier {
+    background-color: #f5f5f5;
+    padding:10px;
+    padding-bottom:60px;
+}
+
+section.panier .name_des{
+    letter-spacing: 1px;
+    line-height: 27px;
+    margin-top:5px;
+}
+section.panier .name_des div{
+    margin-bottom:10px;
+}
+section.panier  .quantity{
+margin-top:20px;
+}
+section.panier  .prix{
+    margin-top:20px;
+    }
+    section.panier  .sous-total{
+        margin-top:15px;
+        }
+        section.panier  h2{
+            margin-bottom: 58px;
+    /* margin-top: 4px; */
+    padding-top: 26px;
+            }
+            section.panier  .tit{
+                font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+            }
+            section.panier .container .row  .product{
+background-color: #fff;
+padding-bottom: 20px;
+padding-top: 20px;
+            }
+            section.panier .total:not(span){
+font-size:20px;
+font-weight: 600;
+            }
+            section.panier .total span{
+                font-size:18px;
+                margin-left: 10px;
+                            }
+                            section.panier .frais{
+                                font-size:18px;
+                                letter-spacing: 1px;
+                            }
+                            section.panier .product:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+section.panier .delete i{
+    color:blueviolet;
+    margin-right:5px;
+    cursor:pointer;
+}
+section.panier .container .row .btn-block{
+    outline: none;
+    border: none;
+    padding-top:10px;
+    padding-bottom: 10px;
+    background-color: #a517ba;
+    color:#fff;
+    margin-top:30px;
+    border-radius: 5px;
+}
+section.panier .container .row .btn:hover,section.panier .container .row .btn:focus{
+    outline: none;
+    box-shadow: 0 0 0 0;
+    border: none;
+}
+section.panier .container .row .les_buttons:nth-child(1) .btn-block{
+    background-color: #fff;
+    color:#a517ba;
+}
+section.panier .container .row.product{
+    margin-bottom:30px;
+}
+
+            

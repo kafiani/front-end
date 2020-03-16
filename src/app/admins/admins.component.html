@@ -1,0 +1,28 @@
+<div class="row text-center">
+ <div class="col-4 offset-4">
+    <h2>Admins</h2>
+ </div>
+</div>
+<table class="table table-borderless">
+    <thead>
+      <tr class='bg-dark' style='color:white;'>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Modification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let c of admins;index as i'>
+        <th scope="row">{{i+1}}</th>
+        <td><input type="text"  [attr.data-val]='c.id' name='first_name' class="form-control" [value]='c.first_name'></td>
+        <td><input type="text" [attr.data-val]='c.id' name='last_name' class="form-control" [value]='c.last_name'></td>
+        <td><input type="text" [attr.data-val]='c.id'  name='email' class="form-control" [value]='c.email' (blur)='onBlur($event)'>
+            <div class="invalid-feedback">Email has already been taken</div>
+        </td>
+        <td><button  [attr.data-id]='c.id' class="btn btn-primary" style='margin-right:20px;' (click)='update($event)'>Update</button><button [attr.data-id]='c.id' class="btn btn-danger" (click)='delete($event)'>Delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>

@@ -1,0 +1,13 @@
+h2{
+    margin-bottom: 24px;
+    font-weight: 400;
+    margin-top: 23px;
+}
+.form-group .invalid-feedback{
+    display:none;
+    color:red;
+}
+.form-group  .invalid-feedback.show{
+    display: inline-block;
+    transition: all .5s ease;
+}

@@ -1,0 +1,18 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3 text-center no_notify" style="color:goldenrod" *ngIf="notify_quantite.length==0">
+                Pas de notification pour le moment !
+            </div>
+            <div class="notify col-10 offset-1" *ngFor="let c of notify_quantite">
+                <div class="data" style="position: relative;" >
+                    Il faut Augmnter la quantite du produit 
+                    Name : <span class="name">{{c.name}}</span> , 
+                    Id : <span class="id">{{c.id}} </span>
+                    <span class="alert_notify"><i class="fas fa-exclamation-triangle"></i> </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>

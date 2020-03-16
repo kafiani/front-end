@@ -1,0 +1,14 @@
+table{
+    margin-top:50px;
+}
+button{
+    margin-right:25px;
+}
+.form-group .invalid-feedback{
+    display:none;
+    color:red;
+}
+.form-group  .invalid-feedback.show{
+    display: inline-block;
+    transition: all .5s ease;
+}

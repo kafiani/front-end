@@ -1,0 +1,8 @@
+<h2>Here are some links to help you start: </h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+<input type="file"  name="file" id="file" class="inputfile"  (change)="fileEvent($event)" multiple accept="image/*"/>
+<button>Upload Image</button>
+</form>
+
+<!--<input type="file" name="file" id="file" class="inputfile" />
+<label for="file">Choose a file</label>-->

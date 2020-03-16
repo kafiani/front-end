@@ -1,0 +1,27 @@
+table.table{
+
+  margin-top:100px;
+}
+table tr{
+  height: 60px !important;
+}
+table th{
+ 
+
+}
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+  font-size: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.badge-dark {
+  /* cursor: pointer !important; */
+  color: #fff;
+  background-color: #343a40;
+  font-size: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+}

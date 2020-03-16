@@ -1,0 +1,37 @@
+
+  #banner{
+    background-image: linear-gradient(to right,#a517ba,#5f1782);
+    padding-top:5%;
+    color:#fff;
+    
+    }
+    .promo{
+      font-weight: 600;
+      margin-top: 47px;
+    margin-bottom: 37px;
+    }
+    
+    #banner .imge{
+    margin-top:30px;;
+    }
+    #banner .wave{
+      width:100%;
+    }
+    #banner p{
+      line-height: 30px;
+    }
+    #navbar button{
+      border:none;
+    }
+    @media (max-width: 992px) { 
+      #banner p{
+        line-height: 25px;
+
+      }
+ .promo{
+
+    margin-bottom: 20px;
+    }
+     }
+     section.features div i{}
+     

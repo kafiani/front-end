@@ -1,0 +1,127 @@
+<!--<mat-card  class="mb-4 m-2 ">
+    <table id="cart" class="table table-hover table-condensed">
+         <thead>
+             <h1 class="ml-4">Panier</h1>
+             <tr>
+                 <th style="width:50%">Product</th>
+                 <th style="width:10%">Price</th>
+                 <th style="width:8%">Quantity</th>
+                 <th style="width:22%" class="text-center">Subtotal</th>
+                 <th style="width:10%"></th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let oneLineCommand of allTempoCommands">
+                 <td data-th="Product">
+                     <div class="row">
+                         <div class="col-sm-2 hidden-xs"><img src="" alt="..." class="img-responsive"/></div></div>
+                         <div class="col-sm-10">
+                             <h4 class="nomargin">{{oneLineCommand.product.name}}</h4>
+                             <p>{{oneLineCommand.product.description}}</p>
+                         </div>
+                     </div>
+                 </td>
+                 <td data-th="Price">${{oneLineCommand.product.new_price}}</td>
+                 <td data-th="Quantity">
+                     <input type="number" #newQuantity class="form-control" [value]="oneLineCommand.quantity" min=1 [max]="oneLineCommand.product.quantity" (blur)="editQuantity(oneLineCommand.product.id,newQuantity.value)">
+                  
+                 </td>
+                 <td data-th="Subtotal" class="text-center">${{oneLineCommand.quantity*oneLineCommand.product.new_price}}</td>
+                 <td class="actions" data-th="">
+                     <button (click)="deleteCommand(oneLineCommand?.product.id)" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>								
+                 </td>
+             </tr>
+             <tr *ngIf="allTempoCommands.length == 0">
+                 <td><h4>Nothing</h4></td>
+             </tr>
+         </tbody>
+         <tfoot>
+             <tr>
+                 <td><a routerLink="/products" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                 <td colspan="2" class="hidden-xs"></td>
+                 <td class="hidden-xs text-center"><strong>Total ${{total()}}</strong></td>
+                 <td *ngIf="allTempoCommands.length != 0"><a routerLink="/checkout" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+             </tr>
+         </tfoot>
+ </table>
+ </mat-card>
+-->
+
+ <section class="panier">
+    <div class="container">
+     <h2 class="title text-center">Panier <span class="nb_article">({{allTempoCommands.length}} articles)</span></h2>
+     <div class="row">
+         <div class="col-4 offset-2 tit">
+             Article
+         </div>
+         <div class="col-2 tit">
+          Quantity
+      </div>
+      <div class="col-2 tit">
+          Prix Unitaire
+      </div>
+      <div class="col-2 tit">
+          Sous-Total
+      </div>
+     </div>
+        <div class="row">
+           
+                  <div class="product col-12 row " *ngFor="let oneLineCommand of allTempoCommands">
+                     <div class="img col-2" style="position: relative;">
+                         <img [src]="splice_img(oneLineCommand.product.images)" alt="" class="img-fluid" style="height:90px;">
+                        </div>
+                        <div class="name_des col-4">
+             <div class="descandname">
+                {{oneLineCommand.product.name}} <br>
+                {{oneLineCommand.product.description}}
+             </div>
+             <div class="color " *ngIf="oneLineCommand.product.color">
+                 Color : <span class="color_db">{{oneLineCommand.product.color}}</span>
+             </div>
+             <div class="Poids " *ngIf="oneLineCommand.product.Poids">
+                 Poids : <span class="poids_db">{{oneLineCommand.product.Poids}} Kg</span>
+             </div>
+             <div class="delete hvr-icon-pop " >
+                 <i class="fas fa-trash hvr-icon" (click)="deleteCommand(oneLineCommand?.product.id)"></i> SUPPRIMER
+             </div>
+                        </div>
+                    
+                    <div class="col-2 quantity text-center" data-th="Quantity">
+                     <input type="number" class="form-control" 
+                     #newQuantity class="form-control" [value]="oneLineCommand.quantity" min=1 [max]="oneLineCommand.product.quantity" (blur)="editQuantity(oneLineCommand.product.id,newQuantity.value)"
+                     
+                     >
+                                      </div>
+                                      <div class="col-2 prix text-center" data-th="Price">
+                                        ${{oneLineCommand.product.new_price}}
+                                      </div>
+                                      <div class="sous-total col-2 text-center">
+                                        ${{oneLineCommand.quantity*oneLineCommand.product.new_price}}
+                                      </div>    
+                  </div>                              
+                    
+                
+            <div class="col-5 offset-7 total" style="margin-top:30px;">
+             Total :	<span class="totalprix" style="color:blueviolet">${{total()}} Dhs</span> 
+            
+            </div>
+            <div class="col-5 offset-7 frais" style="margin-top:5px;">
+             
+             Frais de livraison non inclus pour le moment
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+         
+          <div class="col-3  les_buttons ">
+             <button class="btn-block shadow " routerLink="">POURSUIVRE VOS ACHATS</button>
+          </div>
+          <div *ngIf="allTempoCommands.length != 0" class="col-3 offset-6 les_buttons ">
+             <button class="btn-block  shadow"  (click)="onCheckout()">FINALISER VOTRE COMMANDE</button>
+          </div>
+        </div>
+    </div>
+ </section>
+ 
+ 

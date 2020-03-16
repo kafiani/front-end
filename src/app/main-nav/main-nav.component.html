@@ -1,0 +1,95 @@
+<mat-sidenav-container class="sidenav-container shadow">
+  <mat-sidenav #drawer class="sidenav bg-white navbar-light" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class=""><div class="" >Shooping</div></mat-toolbar>
+    <mat-nav-list color="primary">
+       <a mat-list-item routerLinkActive ="active" [routerLinkActiveOptions]="{exact:true}" routerLink=""  class="nav-link  hvr-icon-down" href="#" 
+       *ngIf="!admin && !super_admin" [ngsReveal]="{ reset: true}"
+       ><i class="fas fa-home hvr-icon"></i> Home</a>
+       <a mat-list-item class="nav-link hvr-icon-down" href="#"  routerLink="Categories" routerLinkActive="active" 
+       *ngIf="admin || super_admin"    [ngsReveal]="{ reset: true}"     
+       ><i style="color:#353b48;"
+                    class="fas fa-cubes hvr-icon"
+                    ></i>Categories</a>
+      <a mat-list-item routerLinkActive="active" class="nav-link hvr-icon-spin" routerLink="Products"
+      *ngIf="admin || super_admin" [ngsReveal]="{ reset: true}"
+      ><i  style="color:#ff6348"
+        class="fab fa-product-hunt hvr-icon"></i> Products</a>
+      <a mat-list-item routerLink="cart" class="nav-link hvr-icon-rotate"  *ngIf="!admin && !super_admin && loggedIn" [ngsReveal]="{ reset: true}">
+        <i style="color:#3742fa"  class="hvr-icon fas fa-shopping-cart"></i>
+        Panier</a>
+        <a mat-list-item routerLink="purshases" class="nav-link hvr-icon-rotate"  *ngIf="!admin && !super_admin && loggedIn" [ngsReveal]="{ reset: true}">
+          <i style="color:#ff6348"  class="hvr-icon fas fa-shopping-bag"></i>
+          
+          Purshases</a>
+          <a mat-list-item routerLink="/commands" class="nav-link hvr-icon-rotate"  *ngIf="admin || super_admin"[ngsReveal]="{ reset: true}">
+            <i style="color:#ff6348"  class="hvr-icon fas fa-database"></i>            
+            Commands</a>
+        <a mat-list-item class="nav-link hvr-icon-down" href="#"  routerLink="register" routerLinkActive="active" *ngIf="!loggedIn"
+        [ngsReveal]="{ reset: true}"
+        ><i style="color:#2ed573;"
+           class=" fas fa-user-circle hvr-icon"></i> Register</a>
+           <a mat-list-item class="nav-link hvr-icon-down" *ngIf="!loggedIn" href="#"  routerLink="login" routerLinkActive="active" 
+           [ngsReveal]="{ reset: true}"
+           ><i style="color:#F79F1F;"
+              class=" fas fa-key hvr-icon"></i> Login</a>
+              <a mat-list-item class="nav-link hvr-icon-down" href="#"  routerLink="addCategorie" routerLinkActive="active" 
+              *ngIf="admin || super_admin" [ngsReveal]="{ reset: true}"
+              ><i style="color:#eb3b5a;"
+                 class="fas fa-plus hvr-icon"></i>Add category</a>
+                 <a mat-list-item class="nav-link hvr-icon-down" href="#"  routerLink="addProduct" routerLinkActive="active" 
+                
+                 *ngIf="admin || super_admin" [ngsReveal]="{ reset: true}"
+                 ><i style="color:#FC427B;"
+                    class="fas fa-plus hvr-icon"></i>Add product</a>
+                    <a mat-list-item class="nav-link hvr-icon-down" href="#"  routerLink="Admins" routerLinkActive="active" 
+                    *ngIf="super_admin" [ngsReveal]="{ reset: true}"><i style="color:#a55eea;" 
+                    class="fas fa-user-shield hvr-icon"></i>Admins</a>
+                    <a mat-list-item class="nav-link hvr-icon-down" href="#"  *ngIf="super_admin" routerLink="addAdmin" routerLinkActive="active" 
+                    [ngsReveal]="{ reset: true}"
+                    ><i style="color:#fa8231;"
+                       class="fas fa-user-plus hvr-icon"></i>Add Admin</a>
+                      <ng-container>
+                        <div class="name_categorie" (click)="show_hide_a()" *ngIf="!admin && !super_admin">
+                          <i class="fas fa-angle-up hide"></i><i class="fas fa-angle-down down"></i><span>Categories</span> 
+                        </div>
+                        <div  class="content">
+                          <a *ngFor="let c of categories" [routerLink]="['category',c.id]" style="font-size:15px;letter-spacing:0px;" mat-list-item class="nav-link hvr-icon-down hide"  routerLinkActive="active" 
+                        ><i class="fab fa-ello" style="color:#f53b57"></i>{{c.name}}</a> 
+                        </div>
+                       
+                        
+                      </ng-container>
+                                     
+                    
+                       
+          
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-toolbar">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+        class="btn-matt"
+        
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>navbarXS</span>
+      <span class="spacer"></span>
+      <a class="nav-link hvr-icon-down notify" routerLink="/notification" 
+                      ><i class="fas fa-bell " id="there_is_notify" [ngClass]="{'there_is_notify':nb_notify>0}" style="position:relative" *ngIf="admin || super_admin"><span *ngIf="nb_notify>0" style="font-size: 15px;
+                        font-family: cursive;">{{nb_notify}}</span></i></a> 
+       <a mat-list-item class="nav-link hvr-icon-push profile"  routerLink="profile" style="color:#fff;"><i class="fa fa-user hvr-icon" style="color:#fff;"></i></a>
+              <a mat-list-item class="nav-link shadow hvr-buzz-out"  routerLink="login"  *ngIf="!loggedIn" >Login</a>
+              <a mat-list-item class="nav-link shadow hvr-buzz-out" routerLink="login" *ngIf="loggedIn" (click)="logout()" >Logout</a>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

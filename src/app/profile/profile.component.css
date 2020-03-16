@@ -1,0 +1,25 @@
+.profile i{
+    margin-right:7px;
+}
+.profile table{
+    margin-top:50px;
+}
+.wc img{
+    margin-bottom: 30px;
+
+}
+form input{
+    color:black;
+    font-size: 17px;
+}
+form input[type="phone"]{
+    width:100%;
+}
+.fedd{
+    color:red;
+    display:none;
+    margin-left:20px;
+}
+.fedd.show{
+    display:block;
+}
